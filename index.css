@@ -1004,7 +1004,7 @@ input, textarea {
 
 .testimonial-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
