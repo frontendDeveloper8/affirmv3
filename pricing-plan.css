@@ -1,0 +1,816 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    height: 80px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 35px;
+}
+
+.logo span {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #007bff;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border-radius: 4px;
+    padding: 10px 0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #f8f9fa;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #007bff;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #180622;
+    padding: 80px 50px;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.hero-content {
+    max-width: 800px;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin: 0 0 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin: 0 0 30px;
+    opacity: 0.8;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.buttons button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.buttons .primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.buttons .secondary {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.buttons .primary:hover {
+    background-color: #0056b3;
+}
+
+.buttons .secondary:hover {
+    background-color: white;
+    color: #180622;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #220c3f;
+    color: white;
+    padding: 80px 50px 30px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-column h3 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.footer-column.about img {
+    height: 40px;
+}
+
+.footer-column.about p {
+    margin: 0;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 15px;
+}
+
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.footer-column ul li a:hover {
+    opacity: 1;
+}
+
+.footer-column.information p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    opacity: 0.8;
+}
+
+.footer-column.work-hours p {
+    margin: 0;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+.footer-bottom {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.footer-bottom hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 30px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        display: none;
+        padding-left: 20px;
+    }
+
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+
+    .social-icons {
+        display: none;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .footer {
+        padding: 50px 20px 30px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 28px;
+    }
+
+    .buttons button {
+        width: 100%;
+    }
+}
+
+/* Overlap Section */
+.overlap-section {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 100px 0 200px;
+    margin-bottom: 40px;
+    overflow: hidden;
+}
+
+.gray-container {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    background-color: #f4f4f4;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.purple-container {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 30px;
+    background-color: #6a0dad;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+.purple-heading {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.purple-text {
+    font-size: 16px;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+}
+
+.purple-button {
+    background: white;
+    color: #6a0dad;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.purple-button:hover {
+    background: #f0f0f0;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Mental Health Section */
+.mental-health-section {
+    padding: 60px 0;
+    margin: 0;
+    background-color: #f8f8f8;
+    overflow: hidden;
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-subtitle {
+    color: #6a0dad;
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.left-content {
+    width: 30%;
+}
+
+.left-heading {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.left-description {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icon {
+    font-size: 24px;
+    color: #6a0dad;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(106, 13, 173, 0.1);
+    border-radius: 50%;
+}
+
+.image-container {
+    width: 35%;
+    height: 400px;
+    background: #ddd;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.award-badge {
+    position: absolute;
+    bottom: 20px;
+    left: -10px;
+    background: #6a0dad;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.right-features {
+    width: 30%;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    font-size: 24px;
+    color: #6a0dad;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: rgba(106, 13, 173, 0.1);
+    border-radius: 8px;
+}
+
+.feature-item strong {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.feature-item p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Responsive Styles for Overlap and Mental Health Sections */
+@media (max-width: 768px) {
+    .overlap-section {
+        padding: 80px 0 180px;
+    }
+    
+    .purple-container {
+        width: 95%;
+        padding: 40px 20px;
+    }
+    
+    .purple-heading {
+        font-size: 26px;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .left-content, .right-features {
+        width: 100%;
+    }
+
+    .image-container {
+        width: 100%;
+        height: 300px;
+        margin: 30px 0;
+    }
+
+    .left-heading {
+        text-align: center;
+    }
+
+    .left-description {
+        text-align: center;
+    }
+
+    .contact-info {
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .overlap-section {
+        padding: 60px 0 160px;
+    }
+    
+    .purple-container {
+        padding: 30px 15px;
+    }
+    
+    .purple-heading {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+    
+    .purple-text {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    
+    .purple-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .image-container {
+        height: 250px;
+    }
+
+    .feature-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .feature-icon {
+        margin-bottom: 10px;
+    }
+}
+
+/* Pricing Section Styles */
+.pricing-section {
+    padding: 80px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.pricing-title {
+    color: #6a0dad;
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.pricing-heading {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+.pricing-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.pricing-card {
+    background: white;
+    border-radius: 10px;
+    padding: 40px 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.plan-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.plan-price {
+    color: #6a0dad;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.price-value {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.plan-description {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.includes-title {
+    font-size: 18px;
+    color: #333;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.plan-features li {
+    color: #555;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.plan-features li::before {
+    content: "✓";
+    color: #6a0dad;
+    font-weight: bold;
+}
+
+.package-btn {
+    background: #6a0dad;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.package-btn:hover {
+    background: #5a009d;
+    transform: translateY(-2px);
+}
+
+.note {
+    font-size: 12px;
+    color: #888;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+/* Responsive styles for pricing section */
+@media (max-width: 1024px) {
+    .pricing-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .pricing-section {
+        padding: 60px 20px;
+    }
+
+    .pricing-container {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+
+    .pricing-heading {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .pricing-card {
+        padding: 30px 20px;
+    }
+
+    .plan-title {
+        font-size: 20px;
+    }
+
+    .price-value {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pricing-section {
+        padding: 40px 15px;
+    }
+
+    .pricing-heading {
+        font-size: 24px;
+    }
+
+    .pricing-card {
+        padding: 25px 15px;
+    }
+
+    .plan-features li {
+        font-size: 13px;
+    }
+
+    .package-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+/* Your pricing section styles will go here */
